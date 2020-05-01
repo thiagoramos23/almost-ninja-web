@@ -1,0 +1,87 @@
+<div class="sm:pt-4 md:pt-16">
+  <div>
+    <div class="flex w-full flex-col md:flex-col lg:flex-row px-20">
+      <div class="lg:w-1/2 px-8 pt-4">
+        <h2 class="text-5xl font-bold leading-tight text-gray-900 pb-8"><%= @course.name %></h2>
+        <h3 class="text-2xl font-medium leading-tight text-gray-800 mb-8 px-4">O que é este curso?</h3>
+        <p class="text-lg font-light text-gray-600 leading-normal text-justify px-4">
+          Neste curso você vai aprender como criar um app do zero utilizando <span class="font-bold text-indigo-700">SwiftUI</span> e
+          <span class="font-bold text-indigo-700">Combine</span>.
+          Vai aprender como alinhar componentes, fazer efeitos e animações, buscar informaçõs em web services
+          utilizando <span class="font-bold text-indigo-700">URLSession</span> em conjunto com <span class="font-bold text-indigo-700">Combine</span> e muito mais...
+        </p>
+        <div id="course_content">
+          <p class="pt-6 px-4 text-xl font-medium">O curso contém:</p>
+          <ul class="flex flex-col lg:flex-row px-8 pt-4">
+            <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+              <%= image_tag "video.svg", class: "text-center" %>
+              <span class="px-2">26 vídeos (~ 6:30 de conteúdo)</span>
+            </li>
+            <li class="flex leading-relaxed text-gray-800 mb-2 items-start lg:ml-12">
+              <%= image_tag "code-pen.svg", class: "text-center" %>
+              <span class="px-2">4 Repositórios completos</span>
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col md:flex-row lg:flex-row">
+          <div id="detail_content">
+            <p class="pt-6 px-4 text-base">Neste curso você vai aprender:</p>
+            <ul class="flex flex-col px-8 pt-4">
+              <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+                <%= image_tag "check.svg", class: "text-center" %>
+                <span class="px-2 text-base font-light">Swift UI</span>
+              </li>
+              <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+                <%= image_tag "check.svg", class: "text-center" %>
+                <span class="px-2 text-base font-light">Swift UI Stacks</span>
+              </li>
+              <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+                <%= image_tag "check.svg", class: "text-center" %>
+                <span class="px-2 text-base font-light">Combine</span>
+              </li>
+              <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+                <%= image_tag "check.svg", class: "text-center" %>
+                <span class="px-2 text-base font-light">URLSession</span>
+              </li>
+              <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+                <%= image_tag "check.svg", class: "text-center" %>
+                <span class="px-2 text-base font-light">Animations</span>
+              </li>
+            </ul>
+          </div>
+          <div id="knowledge_needed_content">
+            <p class="pt-6 px-4 text-base">Conhecimentos Necessários:</p>
+            <ul class="flex flex-col px-8 pt-4">
+              <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+                <%= image_tag "check.svg", class: "text-center" %>
+                <span class="px-2 text-base font-light">Básico de Swift</span>
+              </li>
+              <li class="flex leading-relaxed text-gray-800 mb-2 items-start">
+                <%= image_tag "check.svg", class: "text-center" %>
+                <span class="px-2 text-base font-light">Básico de Xcode</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <%# <div class="flex">
+          <ul class="flex flex-col">
+            <li>asd</li>
+            <li>da34e2342sd</li>
+            <li>dswfdeghfdgadas</li>
+          </ul>
+          <ul class="flex flex-col">
+            <li>dasdsa</li>
+            <li>dasd</li>
+            <li>dsadas</li>
+          </ul>
+        </div> %>
+      </div>
+      <div class="lg:w-1/2 h-auto">
+        <iframe width="100%" height="100%" class="rounded-lg border-gray-200 shadow-2xl border-2" src='https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0'
+          frameborder='0' allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</div>

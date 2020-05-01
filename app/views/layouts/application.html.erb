@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlmostNinjaWeb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="font-body tracking-wide">
+    <%= render 'layouts/navigation_bar' %>
+
+    <%# FUTURE NOTIFICATION %>
+    <%# <div class="max-w-sm mx-auto flex p-6 bg-white rounded-lg shadow-xl">
+      <div class="pt-2">
+        <svg width="24" height="24" class="text-white">
+          <rect width="24" height="24" fill="none" rx="0" ry="0"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0601 5.255C20.4701 4.665 19.5201 4.665 18.9401 5.255L8.62006 15.575L5.06006 12.005C4.47006 11.415 3.52006 11.415 2.94006 12.005C2.35006 12.595 2.35006 13.545 2.94006 14.125L7.56006 18.745C7.85006 19.035 8.24006 19.185 8.62006 19.185C9.00006 19.185 9.39006 19.035 9.68006 18.745L21.0601 7.375C21.6501 6.795 21.6501 5.835 21.0601 5.255Z"/>
+        </svg>
+      </div>
+      <div class="ml-6 pt-1">
+        <h4 class="text-xl text-gray-900 leading-tight">ChitChat</h4>
+        <p class="text-base text-gray-600 leading-normal">You have a new message!</p>
+      </div>
+    </div> %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
