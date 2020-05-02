@@ -1,4 +1,4 @@
-class Courses::CoursesController < ApplicationController
+class Course::CoursesController < ApplicationController
   before_action :authenticate_account!
 
   def index
@@ -14,5 +14,6 @@ class Courses::CoursesController < ApplicationController
 
   def show
     @course = ::Course::Course.find(params[:id])
+    render 'courses/show'
   end
 end
