@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ::Courses::CoursesController do
+describe ::Course::CoursesController, type: %i[controller course] do
   login_account
 
   let!(:course) { Fabricate :course }
@@ -24,11 +24,11 @@ describe ::Courses::CoursesController do
     let!(:registered_course) do  
       course = Fabricate :course
       course.users << ::User.first
+      course
     end
     
-
     before do
-      get 'courses/my_courses'
+      get :my_courses
     end
 
     it 'should return all courses the user is registered' do
