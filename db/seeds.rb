@@ -6,18 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = ::User.create!(email: 'test@example.com')
-::Account.create!(email: 'test@example.com', password: 'testtesttest', password_confirmation: 'testtesttest', user: user)
-course = ::Course.create!(
-  name:               'SwiftUI and Combine', 
-  lenght:             120, 
-  description:        'Learn iOS using SwiftUI with Combine and embrace the power of the new Apple UI Framework',
-  total_classes:      6,
-  total_repositories: 1,
-  learning_subjects:  'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations',
-  needed_knowledge:   'Básico de Swift,Básico de Xcode'
-)
-course.users << user
-course.tags.create(name: 'swiftUI')
-course.tags.create(name: 'combine')
-course.tags.create(name: 'apple')
+course_html_description = <<~LARGE_DESCRIPTION
+Neste curso você vai aprender como criar um app do zero utilizando <span class="font-bold text-indigo-700">SwiftUI</span> e
+<span class="font-bold text-indigo-700">Combine</span>.
+Vai aprender como alinhar componentes, fazer efeitos e animações, buscar informaçõs em web services
+utilizando <span class="font-bold text-indigo-700">URLSession</span> em conjunto com <span class="font-bold text-indigo-700">Combine</span>.
+Espero que você saia desse curso como um Quase Ninja em Swift
+LARGE_DESCRIPTION
+::ActiveRecord::Base.transaction do
+  user = ::User.create!(email: 'thiagoramos.al@example.com')
+  ::Account.create!(email: 'thiagoramos.al@example.com', password: '123123123', password_confirmation: '123123123', user: user)
+  course = ::Course::Course.create!(
+    name:               'SwiftUI and Combine',
+    length:             120,
+    description:        'Learn iOS using SwiftUI with Combine and embrace the power of the new Apple UI Framework',
+    html_description:   course_html_description,
+    total_classes:      6,
+    total_repositories: 1,
+    learning_subjects:  'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations',
+    needed_knowledge:   'Básico de Swift,Básico de Xcode'
+  )
+  course.users << user
+  course.tags.create(name: 'swiftUI')
+  course.tags.create(name: 'combine')
+  course.tags.create(name: 'apple')
+end
