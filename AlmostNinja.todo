@@ -1,11 +1,16 @@
 Questions:
-  ☐ Why have_many is not working in the course model? Is it a problem with shoulda-matchers @created(20-04-26 01:34)
+  ✔ Why have_many is not working in the course model? Is it a problem with shoulda-matchers @created(20-04-26 01:34) @done(20-05-03 00:33)
 
 Things to do:
-  ☐ Add links to the course and my course buttons in the navigation bar @created(20-04-26 01:34)
+  ✔ Add links to the course and my course buttons in the navigation bar @created(20-04-26 01:34) @done(20-05-03 00:33)
   ☐ Add default picture for a user without a picture @created(20-04-26 01:35)
   ☐ Create a profile page where user can upload the picture @created(20-04-26 01:34)
   ☐ Create the detail page for a course. This is not the page where the customer goes when he is already doing the course. @created(20-04-26 01:35)
     This is the page where he goes to meet the course. Try to think how to design it.
-  ☐ How to play videos from youtube @created(20-04-27 22:36)
+  ✔ How to play videos from youtube @created(20-04-27 22:36) @done(20-05-03 00:33)
     Example ID: RGbCR_pq4_A
+
+Worth Mention:
+  - I am using this html piece to make some words show off in the course descrption:
+  <span class="font-bold text-indigo-700">
+  - The course description should be added in the html_description with the html.
