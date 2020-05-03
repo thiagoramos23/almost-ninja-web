@@ -1,4 +1,4 @@
-<%= link_to course_path(course) do %>
+<%= link_to course_path(course), id: "course-#{course.name.parameterize}" do %>
   <div class="max-w-sm rounded overflow-hidden shadow-lg mt-10 cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 hover:-translate-x-1  hover:scale-105 hover:shadow-xl">
     <svg class="bg-black illustration" width="600" height="300" viewBox="250 0 1155 700" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M467.676 613.255H702.387C717.396 613.255 729.563 601.088 729.563 586.079V527.894H883.372C895.111 527.894 904.627 518.377 904.627 506.638V189.532C904.627 177.793 895.111 168.277 883.372 168.277H729.563V124.176C729.563 109.167 717.396 97 702.387 97H467.676C452.667 97 440.5 109.167 440.5 124.176V168.277H277.117C265.378 168.277 255.861 177.793 255.861 189.532V506.638C255.861 518.377 265.378 527.894 277.117 527.894H440.5V586.079C440.5 601.088 452.667 613.255 467.676 613.255Z" fill="#193170"/>
