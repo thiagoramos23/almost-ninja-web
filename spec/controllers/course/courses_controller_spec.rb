@@ -21,12 +21,12 @@ describe ::Course::CoursesController, type: %i[controller course] do
   end
 
   describe 'GET my-courses' do
-    let!(:registered_course) do  
+    let!(:registered_course) do
       course = Fabricate :course
       course.users << ::User.first
       course
     end
-    
+
     before do
       get :my_courses
     end

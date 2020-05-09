@@ -3,6 +3,7 @@ class Course::CoursesController < ApplicationController
 
   def index
     @courses = ::Course::Course.all_available_courses
+
     render 'courses/index'
   end
 
