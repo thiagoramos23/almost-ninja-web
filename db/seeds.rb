@@ -24,7 +24,8 @@ LARGE_DESCRIPTION
     total_classes:      6,
     total_repositories: 1,
     learning_subjects:  'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations',
-    needed_knowledge:   'Básico de Swift,Básico de Xcode'
+    needed_knowledge:   'Básico de Swift,Básico de Xcode',
+    intro_video_url:    'https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0'
   )
   course.users << user
   course.tags.create(name: 'swiftUI')
