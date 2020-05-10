@@ -8,7 +8,7 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.string  :needed_knowledge, null: false
       t.string  :intro_video_url, null: false
       t.integer :length
-      t.integer :total_classes
+      t.integer :total_lectures
       t.integer :total_repositories
 
       t.timestamps

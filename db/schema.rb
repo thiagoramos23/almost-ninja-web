@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_023303) do
     t.string "needed_knowledge", null: false
     t.string "intro_video_url", null: false
     t.integer "length"
-    t.integer "total_classes"
+    t.integer "total_lectures"
     t.integer "total_repositories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

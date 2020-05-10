@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="font-body tracking-wide">
+  <body class="font-body tracking-wide flex flex-col min-h-screen">
     <%= render 'layouts/navigation_bar' %>
 
     <%# FUTURE NOTIFICATION %>
@@ -27,6 +27,11 @@
     </div> %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>

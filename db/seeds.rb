@@ -14,14 +14,14 @@ utilizando <span class="font-bold text-indigo-700">URLSession</span> em conjunto
 Espero que você saia desse curso como um Quase Ninja em Swift
 LARGE_DESCRIPTION
 ::ActiveRecord::Base.transaction do
-  user = ::User.create!(email: 'thiagoramos.al@example.com')
+  user = ::Identity::User.create!(email: 'thiagoramos.al@example.com')
   ::Account.create!(email: 'thiagoramos.al@example.com', password: '123123123', password_confirmation: '123123123', user: user)
   course = ::Course::Course.create!(
     name:               'SwiftUI and Combine',
     length:             120,
     description:        'Learn iOS using SwiftUI with Combine and embrace the power of the new Apple UI Framework',
     html_description:   course_html_description,
-    total_classes:      6,
+    total_lectures:      6,
     total_repositories: 1,
     learning_subjects:  'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations',
     needed_knowledge:   'Básico de Swift,Básico de Xcode',
