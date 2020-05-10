@@ -6,6 +6,6 @@ module Course
 
     include Taggable
 
-    has_and_belongs_to_many :users
+    has_and_belongs_to_many :users, class_name: '::Identity::User'
   end
 end

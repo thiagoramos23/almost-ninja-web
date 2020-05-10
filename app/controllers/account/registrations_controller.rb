@@ -66,6 +66,6 @@ class Account::RegistrationsController < Devise::RegistrationsController
   private
 
   def create_user
-    params[:account][:user_id] = ::User.create!(email: params[:account][:email]).id
+    params[:account][:user_id] = ::Identity::User.create!(email: params[:account][:email]).id
   end
 end
