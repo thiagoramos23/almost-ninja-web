@@ -8,7 +8,7 @@ Fabricator(:course, class_name: 'Course::Course') do
                        Vai aprender como alinhar componentes, fazer efeitos e animações, buscar informaçõs em web services
                        utilizando <span class="font-bold text-indigo-700">URLSession</span> em conjunto com <span class="font-bold text-indigo-700">Combine</span> e muito mais...
                      LARGE_DESCRIPTION
-  total_classes      6
+  total_lectures     6
   total_repositories 1
   learning_subjects  'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations'
   needed_knowledge   'Básico de Swift,Básico de Xcode'

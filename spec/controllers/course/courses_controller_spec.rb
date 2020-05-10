@@ -23,7 +23,7 @@ describe ::Course::CoursesController, type: %i[controller course] do
   describe 'GET my-courses' do
     let!(:registered_course) do
       course = Fabricate :course
-      course.users << ::User.first
+      course.users << ::Identity::User.first
       course
     end
 
@@ -38,6 +38,22 @@ describe ::Course::CoursesController, type: %i[controller course] do
     it 'should render the index template' do
       expect(response).to render_template("index")
       expect(response).to have_http_status(:ok)
+    end
+  end
+
+  describe 'POST start-course' do
+    let!(:course) do
+      Fabricate :course
+    end
+
+    before do
+      post :start_course, params: { id: course.id }
+    end
+
+    it 'register the course to the user' do
+      expect(course.reload.users).not_to be_empty
+      expect(response).to redirect_to course_lectures_path(course)
+      expect(response).to have_http_status(:found)
     end
   end
 end

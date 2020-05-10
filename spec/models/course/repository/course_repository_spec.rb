@@ -71,4 +71,24 @@ describe 'Course Repository', type: %i[model repository course] do
       end
     end
   end
+
+  describe '.user_already_registered_to_course?' do
+    let!(:account) { Fabricate :account }
+
+    context 'When user has registered to course' do
+      let!(:registered_swift_course)  { swift_course.users << account.user }
+
+      it 'returns true' do
+        result = ::Course::Course.user_already_registered_to_course?(swift_course.id, account.user.id)
+        expect(result).to be_truthy
+      end
+    end
+
+    context 'When user has NO registered to the course' do
+      it 'returns false' do
+        result = ::Course::Course.user_already_registered_to_course?(swift_course.id, account.user.id)
+        expect(result).to be_falsey
+      end
+    end
+  end
 end

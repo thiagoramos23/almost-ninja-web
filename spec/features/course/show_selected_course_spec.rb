@@ -7,12 +7,12 @@ describe 'Show Course details when clicked in a course', type: %i[feature course
   context 'When anonymous user selects a course' do
     let!(:swift_course) do
       Fabricate :course,
-                name: 'Swift UI',
-                total_classes: 6,
+                name:               'Swift UI',
+                total_lectures:     6,
                 total_repositories: 1,
-                length: 120,
-                learning_subjects: 'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations',
-                needed_knowledge: 'Básico de Swift,Básico de Xcode'
+                length:             120,
+                learning_subjects:  'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations',
+                needed_knowledge:   'Básico de Swift,Básico de Xcode'
     end
 
     before do
