@@ -2,6 +2,10 @@ module Course
   module Repository
     module CourseRepository
 
+      def find_course(id)
+        ::Course::Course.find(id)
+      end
+
       def all_available_courses
         courses_with_tags.all.to_a
       end

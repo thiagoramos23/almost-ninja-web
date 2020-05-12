@@ -1,5 +1,5 @@
 class Course::CoursesController < ApplicationController
-  before_action :authenticate_account!, only: [:my_courses]
+  before_action :authenticate_account!, only: [:my_courses, :start_course]
   before_action :set_course, only: [:show, :start_course]
 
   def index
@@ -28,8 +28,7 @@ class Course::CoursesController < ApplicationController
   private
 
   def set_course
-    binding.pry
-    @course = ::Course::Course.find(params[:id])
+    @course = ::Course::Course.find_course(params[:id])
   end
 
   def user_already_registered?

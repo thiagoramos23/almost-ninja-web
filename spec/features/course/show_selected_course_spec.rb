@@ -24,7 +24,7 @@ describe 'Show Course details when clicked in a course', type: %i[feature course
       expect(page).to have_content(swift_course.name)
       expect(page).to have_content(swift_course.description)
 
-      expect(page).to have_content('6 vídeos (~ about 2 hours de conteúdo)')
+      expect(page).to have_content('6 vídeos (~ mais ou menos 2 horas de conteúdo)')
       expect(page).to have_content('1 Repositórios completos')
 
       # Learning Subjects
