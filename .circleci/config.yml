@@ -11,9 +11,9 @@ jobs:
           RAILS_ENV: test
       - image: postgres:9.5
         environment:
-          DB_USERNAME: almost_ninja_web
-          DB_NAME: almost_ninja_web_test
-          DB_PASSWORD: almost_ninja_web
+          POSTGRES_USER: almost_ninja_web
+          POSTGRES_DB: almost_ninja_web_test
+          POSTGRES_PASSWORD: almost_ninja_web
     steps:
       - checkout
       # Restore Cached Dependencies
