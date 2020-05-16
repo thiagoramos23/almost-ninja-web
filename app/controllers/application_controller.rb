@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in_user
-    current_account.user
+    current_account&.user || anonymous_user
+  end
+
+  private
+
+  def anonymous_user
+    ::Identity::User.new(name: 'Anonymous')
   end
 end

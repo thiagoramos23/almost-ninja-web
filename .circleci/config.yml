@@ -34,8 +34,8 @@ jobs:
           POSTGRES_PASSWORD: almost_ninja_web
     # environment variables specific to Ruby/Rails, applied to the primary container.
     environment:
-      BUNDLE_JOBS: "3"
-      BUNDLE_RETRY: "3"
+      BUNDLE_JOBS: "1"
+      BUNDLE_RETRY: "1"
       PGHOST: localhost
       PGUSER: almost_ninja_web
       PGPASSWORD: almost_ninja_web
@@ -56,7 +56,7 @@ jobs:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
       # Run rspec in parallel
-      - ruby/rspec-test
+      - run: bundle exec rspec
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
