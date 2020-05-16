@@ -13,7 +13,7 @@ jobs:
         environment:
           POSTGRES_USER: almost_ninja_web
           POSTGRES_DB: almost_ninja_web_test
-          POSTGRES_PASSWORD: almost_ninja_web
+          POSTGRES_PASSWORD: ""
     steps:
       - checkout
       # Restore Cached Dependencies
@@ -30,9 +30,6 @@ jobs:
         key: almost-ninja-web-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
-
-      # Copy database to use the one proper to CI
-      - run: cp config/database-ci.yml config/database.yml
 
       # So we can wait for postgres to be ready
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
