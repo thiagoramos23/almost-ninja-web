@@ -34,7 +34,12 @@ jobs:
       # So we can wait for postgres to be ready
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
 
+      # To precompile assets
+      run: NODE_ENV=test bundle exec rails webpacker:compile
+
       # Run DB Setup
-      - run: bundle exec rake db:setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:migrate
+
       # Run the tests
       - run: bundle exec rake
