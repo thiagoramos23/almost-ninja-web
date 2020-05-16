@@ -4,7 +4,6 @@ jobs:
   build:
     working_directory: ~/almost_ninja_web
     docker:
-      - image: node:7.4.0
       - image: circleci/ruby:2.5.1
         environment:
           PGHOST: localhost
@@ -15,6 +14,7 @@ jobs:
           POSTGRES_USER: almost_ninja_web
           POSTGRES_DB: almost_ninja_web_test
           POSTGRES_PASSWORD: almost_ninja_web
+      - image: node:7.4.0
     steps:
       - checkout
       # Restore Cached Dependencies
