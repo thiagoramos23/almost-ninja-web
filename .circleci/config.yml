@@ -16,13 +16,15 @@ jobs:
           POSTGRES_PASSWORD: almost_ninja_web
     steps:
       - checkout
+
+      - run: gem install bundler
+
       # Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
         key: almost-ninja-web-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
-      - run: gem install bundler
       - run: bundle install --path vendor/bundle
 
       # Cache Dependencies
