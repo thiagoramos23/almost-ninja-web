@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe ::Course::CoursesController, type: %i[controller course] do
   login_account
-
   let!(:course) { Fabricate :course }
 
   describe 'GET index' do
