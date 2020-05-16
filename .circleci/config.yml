@@ -6,6 +6,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.1
         environment:
+          PGHOST: localhost
+          PGUSER: almost_ninja_web
           RAILS_ENV: test
       - image: postgres:9.5
         environment:
@@ -14,8 +16,27 @@ jobs:
           POSTGRES_PASSWORD: almost_ninja_web
     steps:
       - checkout
-      - run: bundle install
+      # Restore Cached Dependencies
+      - type: cache-restore
+        name: Restore bundle cache
+        key: almost-ninja-web-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+
+      # Cache Dependencies
+      - type: cache-save
+        name: Store bundle cache
+        key: almost-ninja-web-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # Copy database to use the one proper to CI
       - run: cp config/database-ci.yml config/database.yml
+
+      # So we can wait for postgres to be ready
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
       # Run DB Setup
       - run: bundle exec rake db:setup
       # Run the tests
