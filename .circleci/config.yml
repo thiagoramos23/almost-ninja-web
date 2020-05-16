@@ -1,24 +1,21 @@
 ---
-  version: 2
-  jobs:
-      build:
-          working_directory: ~/almost_ninja_web
-          docker:
-              - image: circleci/ruby:2.5.1
-                environment:
-                  RAILS_ENV: test
-              - image: postgres:9.5
-                environment:
-                  POSTGRES_USER: almost_ninja_web
-                  POSTGRES_DB: almost_ninja_web_development
-                  POSTGRES_PASSWORD: almost_ninja_web
-      steps:
-        - checkout
-
-        - run: cp config/database-ci.yml config/database.yml
-
-        # Run DB Setup
-        - run: bundle exec rake db:setup
-
-        # Run the tests
-        - run: bundle exec rake
+version: 2
+jobs:
+  build:
+    working_directory: ~/almost_ninja_web
+    docker:
+      - image: circleci/ruby:2.5.1
+        environment:
+          RAILS_ENV: test
+      - image: postgres:9.5
+        environment:
+          POSTGRES_USER: almost_ninja_web
+          POSTGRES_DB: almost_ninja_web_development
+          POSTGRES_PASSWORD: almost_ninja_web
+  steps:
+    - checkout
+    - run: cp config/database-ci.yml config/database.yml
+    # Run DB Setup
+    - run: bundle exec rake db:setup
+    # Run the tests
+    - run: bundle exec rake
