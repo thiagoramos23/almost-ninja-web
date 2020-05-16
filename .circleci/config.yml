@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/almost_ninja_web
     docker:
-      - image: cimg/ruby:2.7-node
+      - image: circleci/ruby:2.5-stretch-node-browsers-legacy
         environment:
           PGHOST: localhost
           PGUSER: almost_ninja_web
@@ -16,8 +16,6 @@ jobs:
           POSTGRES_PASSWORD: almost_ninja_web
     steps:
       - checkout
-
-      - run: gem install bundler
 
       # Restore Cached Dependencies
       - type: cache-restore
