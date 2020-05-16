@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       redirect_to new_account_session_url
     end
   end
+
+  def signed_in_user
+    current_account.user
+  end
 end

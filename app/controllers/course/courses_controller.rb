@@ -8,12 +8,16 @@ class Course::CoursesController < ApplicationController
   end
 
   def my_courses
-    @courses = ::Course::Course.user_registered_courses(current_account.user.id)
+    @courses = ::Course::Course.user_registered_courses(signed_in_user.id)
     render 'courses/index'
   end
 
   def show
-    render 'courses/show'
+    if user_already_registered?
+      return redirect_to course_lectures_path(@course)
+    else
+      render 'courses/show'
+    end
   end
 
   def continue_course
@@ -32,6 +36,6 @@ class Course::CoursesController < ApplicationController
   end
 
   def user_already_registered?
-    ::Course::Course.user_already_registered_to_course?
+    ::Course::Course.user_already_registered_to_course?(@course.id, signed_in_user.id)
   end
 end

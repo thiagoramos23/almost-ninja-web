@@ -19,8 +19,8 @@ module Course
 
       def user_already_registered_to_course?(course_id, user_id)
         courses_with_users
-          .where('courses.id = ?', course_id)
-          .where('users.id = ?', user_id)
+          .where('courses_users.course_id = ?', course_id)
+          .where('courses_users.user_id = ?', user_id)
           .exists?
       end
 

@@ -59,7 +59,7 @@ describe 'Course Repository', type: %i[model repository course] do
         result = ::Course::Course.user_registered_courses(account.user.id)
         expect(result).not_to be_empty
         expect(result.count).to eq 2
-        expect(result.first.name).to eq swift_course.name
+        expect(result.first.name).to eq swift_course.name 
         expect(result.last.name).to eq elixir_course.name
       end
     end

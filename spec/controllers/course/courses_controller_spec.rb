@@ -20,6 +20,30 @@ describe ::Course::CoursesController, type: %i[controller course] do
     end
   end
 
+  describe 'GET show' do
+
+    context 'When user is not registered to the course' do
+      before { get :show, params: { id: course.id } }
+
+      it 'should render the show template' do
+        expect(response).to render_template('show')
+      end
+    end
+
+    context 'When user is registered to a course' do
+      let!(:register_user_to_course) do
+        user = ::Identity::User.first
+        course.users << user
+      end
+
+      before { get :show, params: { id: course.id } }
+
+      it 'should redirect to the lectures index page' do
+        expect(response).to redirect_to course_lectures_path(course)
+      end
+    end
+  end
+
   describe 'GET my-courses' do
     let!(:registered_course) do
       course = Fabricate :course
