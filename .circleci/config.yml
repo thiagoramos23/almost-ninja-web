@@ -4,6 +4,7 @@ jobs:
   build:
     working_directory: ~/almost_ninja_web
     docker:
+      - image: node:7.4.0
       - image: circleci/ruby:2.5.1
         environment:
           PGHOST: localhost
