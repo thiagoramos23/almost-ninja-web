@@ -13,4 +13,5 @@ Fabricator(:course, class_name: 'Course::Course') do
   learning_subjects  'SwiftUI,SwiftUI Stacks,Combine,URLSessions,Animations'
   needed_knowledge   'Básico de Swift,Básico de Xcode'
   intro_video_url    'https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0'
+  author             { Fabricate :user }
 end

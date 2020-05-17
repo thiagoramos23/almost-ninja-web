@@ -1,54 +1,60 @@
-require: rubocop-performance
-
-AllCops:
-  Exclude:
-    - db/**/*
-    - docs/**/*
-    - vendor/**/*
-    - !ruby/regexp /old_and_unused\.rb$/
-  TargetRubyVersion: 2.5
-
-Layout/LineLength:
-  Severity: fatal
-  Description: 'Limit lines to 120 characters.'
-  Max: 120
-
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
-
-Style/TrailingCommaInHashLiteral:
-  EnforcedStyleForMultiline: comma
-
 Style/Documentation:
   Enabled: false
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Layout/EmptyLinesAroundClassBody:
-    Enabled: false
+  Enabled: false
 
-Naming/PredicateName:
-  NamePrefix:
-    - is_
-
-Style/StringLiterals:
-  Severity: fatal
+Layout/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  StyleGuide: '#120-character-limits'
   Enabled: true
+  VersionAdded: '0.25'
+  VersionChanged: '1.0'
+  AutoCorrect: false
+  Max: 120
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
+  # directives like '# rubocop: enable ...' when calculating a line's length.
+  IgnoreCopDirectives: true
+  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
+  # elements. Strings will be converted to Regexp objects. A line that matches
+  # any regular expression listed in this option will be ignored by LineLength.
+  IgnoredPatterns: []
 
-Layout/IndentationWidth:
-  Enabled: true
-
-Layout/FirstHashElementIndentation:
-  Enabled: true
-  EnforcedStyle: consistent
 
 Layout/HashAlignment:
-  EnforcedColonStyle: table
+  Description: >-
+    Align the elements of a hash literal if they span more than
+    one line.
+  Enabled: true
+  AllowMultipleStyles: true
+  VersionAdded: '0.49'
+  VersionChanged: '0.77'
   EnforcedHashRocketStyle: table
-
-Style/CollectionMethods:
-  Severity: fatal
-  PreferredMethods:
-    collect: 'map'
-    collect!: 'map!'
-    inject: 'reduce'
-    detect: 'find'
-    find_all: 'select'
+  SupportedHashRocketStyles:
+    - key
+    - separator
+    - table
+  EnforcedColonStyle: table
+  SupportedColonStyles:
+    - key
+    - separator
+    - table
+  EnforcedLastArgumentHashStyle: always_inspect
+  SupportedLastArgumentHashStyles:
+    - always_inspect
+    - always_ignore
+    - ignore_implicit
+    - ignore_explicit

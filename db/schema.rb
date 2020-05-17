@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_023303) do
+ActiveRecord::Schema.define(version: 2020_05_17_023820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_023303) do
     t.integer "total_repositories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "author_id"
   end
 
   create_table "courses_users", id: false, force: :cascade do |t|
@@ -48,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_04_28_023303) do
     t.bigint "user_id", null: false
     t.index ["course_id"], name: "index_courses_users_on_course_id"
     t.index ["user_id"], name: "index_courses_users_on_user_id"
+  end
+
+  create_table "lectures", force: :cascade do |t|
+    t.string "video_url"
+    t.string "title"
+    t.string "description"
+    t.bigint "course_id", null: false
+    t.bigint "parent_lecture_id"
+    t.index ["course_id"], name: "index_lectures_on_course_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -65,4 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_023303) do
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "courses", "users", column: "author_id"
+  add_foreign_key "lectures", "courses"
+  add_foreign_key "lectures", "lectures", column: "parent_lecture_id"
 end

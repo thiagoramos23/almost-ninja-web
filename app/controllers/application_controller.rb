@@ -19,5 +19,4 @@ class ApplicationController < ActionController::Base
   def anonymous_user
     ::Identity::User.new(name: 'Anonymous')
   end
-
 end

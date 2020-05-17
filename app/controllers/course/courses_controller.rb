@@ -1,6 +1,6 @@
 class Course::CoursesController < ApplicationController
-  before_action :authenticate_account!, only: [:my_courses, :start_course]
-  before_action :set_course, only: [:show, :start_course]
+  before_action :authenticate_account!, only: %i[my_courses start_course]
+  before_action :set_course, only: %i[show start_course]
 
   def index
     @courses = ::Course::Course.all_available_courses
@@ -14,7 +14,7 @@ class Course::CoursesController < ApplicationController
 
   def show
     if user_already_registered?
-      return redirect_to course_lectures_path(@course)
+      redirect_to course_lectures_path(@course)
     else
       render 'courses/show'
     end

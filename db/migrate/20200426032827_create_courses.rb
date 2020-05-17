@@ -11,7 +11,6 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.integer :total_lectures
       t.integer :total_repositories
 
-      add_reference :courses, :author, null: true, foreign_key: true
       t.timestamps
     end
   end
