@@ -1,5 +1,5 @@
-<div class="flex w-full h-full">
-  <div class="flex flex-col w-3/4 flex-1">
+<div class="flex w-full h-screen">
+  <div class="flex flex-col w-6/7 flex-1">
      <div class="max-h-screen mr-4 relative h-full">
       <iframe width="100%" height="100%" class="absolute border-2 max-h-screen border-gray-200 rounded-lg shadow-md object-cover" src='https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0'
         frameborder='0' allowfullscreen>
@@ -36,20 +36,20 @@
         </div> %>
 
         <%# Comments Tab %>
-        <div class="flex flex-col w-3/4">
+        <div class="flex flex-col items-end w-3/4">
           <div class="mb-4 w-full">
             <textarea class="text-sm leading-tight antialiased bg-gray-200 rounded-md w-full h-16 p-2" placeholder="Adicione seu comentário"></textarea>
           </div>
           <div class="mb-4">
-            <%= button_tag type: :submit, class: "flex flex-row lg:w-1/4 text-center bg-indigo-700 text-white p-2 shadow-xl rounded-lg focus:bg-indigo-800 focus:outline-none" do %>
+            <%= button_tag type: :submit, class: "flex flex-row text-center bg-indigo-700 text-white p-2 shadow-xl rounded-lg focus:bg-indigo-800 focus:outline-none" do %>
               <div class="flex flex-row mx-auto">
                 <span class="pr-2"><%= image_tag "learn.svg" %></span>
                 <span class="text-sm tracking-wide font-medium">Adicionar Comentário</span>
               </div>
             <% end %>
           </div>
-          <div class="border-b-2 mt-2 mb-2"></div>
           <div class="mb-4">
+            <div class="border-b-2 mt-2 mb-2"></div>
             <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
             <div class="flex flex-col ml-2 pt-2">
               <div class="text-sm leading-tight font-semibold text-gray-700 align-middle">Carlos Miguel</div>
@@ -70,7 +70,7 @@
                 Reprehenderit deserunt velit amet aute commodo. Veniam velit laboris Lorem irure dolore aute anim occaecat exercitation tempor Lorem. Culpa nulla magna dolore aliqua ullamco nisi sunt ex laboris.
                 Mollit minim cupidatat et tempor veniam incididunt minim anim ullamco. Incididunt adipisicing fugiat officia enim aliqua enim eiusmod ex consequat deserunt. Officia ea cupidatat culpa non dolore exercitation reprehenderit eu irure ea proident.
               </div>
-              <div class="border-b-2 mt-2"></div>
+              <div class="border-b-2 mt-2 mb-2"></div>
             </div>
           </div>
         </div>
@@ -78,15 +78,16 @@
       </div>
     </div>
   </div>
-  <div class="w-1/4 mt-2">
-    <% (1...8).each do %>
-    <div>
-      <iframe width="100%" height="100%" class="rounded-lg shadow-md h-48" src='https://www.youtube.com/embed/CHYvj2nE7p8?rel=0&autoplay=0'
-        frameborder='0' allowfullscreen>
-      </iframe>
-      <div class="mt-2 mb-4 text-sm text-gray-600">Título do Video</div>
+  <div class="w-1/7 mt-2 flex flex-col overflow-hidden">
+    <div class="overflow-y-scroll">
+      <% (1...8).each do %>
+      <div>
+        <iframe width="100%" height="100%" class="rounded-lg shadow-md h-48" src='https://www.youtube.com/embed/CHYvj2nE7p8?rel=0&autoplay=0'
+          frameborder='0' allowfullscreen>
+        </iframe>
+        <div class="mt-2 mb-4 text-sm text-gray-600">Título do Video</div>
+      </div>
+      <% end %>
     </div>
-
-    <% end %>
   </div>
 </div>

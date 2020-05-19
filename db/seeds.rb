@@ -41,4 +41,10 @@ LARGE_DESCRIPTION
                             title:       'Intro',
                             course:      course,
                             module:      introduction_module)
+
+  ::Course::Lecture.create!(video_url:   'https://www.youtube.com/embed/mPXbFmmt3H0?rel=0&autoplay=0',
+                            description: 'Second Video',
+                            title:       'Books to Read',
+                            course:      course,
+                            module:      introduction_module)
 end
