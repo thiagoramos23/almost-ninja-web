@@ -4,6 +4,7 @@ module Course
     before_action :set_course
 
     def index
+      render 'lectures/index'
     end
 
     def show
