@@ -4,14 +4,11 @@
     <title>AlmostNinjaWeb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body class="font-body tracking-wide flex flex-col min-h-screen">
     <%= render 'layouts/navigation_bar' %>
-
     <%# FUTURE NOTIFICATION %>
     <%# <div class="max-w-sm mx-auto flex p-6 bg-white rounded-lg shadow-xl">
       <div class="pt-2">
@@ -27,11 +24,9 @@
     </div> %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
     <main class="flex-grow">
       <%= yield %>
     </main>
-
     <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,92 +1,89 @@
-<div class="flex w-full h-screen">
-  <div class="flex flex-col w-6/7 flex-1">
-     <div class="max-h-screen mr-4 relative h-full">
-      <iframe width="100%" height="100%" class="absolute border-2 max-h-screen border-gray-200 rounded-lg shadow-md object-cover" src='https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0'
-        frameborder='0' allowfullscreen>
+<div class="flex w-full">
+  <div class="flex flex-col flex-1 w-6/7">
+    <div class="relative mr-4 aspect-ratio-16/9">
+      <iframe height="100%" width="100%" class="absolute" src='https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0'
+          frameborder='0' allowfullscreen>
       </iframe>
     </div>
-    <div class="h-1/4 mr-4">
-      <div class="text-2xl font-semibold text-gray-700 p-3">
+    <div class="mr-4">
+      <div class="p-3 text-2xl font-semibold text-gray-700">
         Aprendendo SwiftUI com Combine
       </div>
       <div class="border-b-2"></div>
-      <div class="flex w-full justify-center mt-8">
+      <div class="flex justify-center w-full mt-8">
         <div class="flex flex-col">
-          <button class="text-md leading-tight text-gray-700 mr-6 mb-2 outline-none">Descricão</button>
-          <span class="border-b-4 border-indigo-700 mr-6"></span>
+          <button class="mb-2 mr-6 leading-tight text-gray-700 outline-none text-md">Descricão</button>
+          <span class="mr-6 border-b-4 border-indigo-700"></span>
         </div>
         <div class="flex flex-col">
-          <button class="text-md leading-tight text-gray-700 mr-6 mb-2 outline-none">Comentários</button>
-          <%# <span class="border-b-4 border-indigo-700 mr-6"></span> %>
+          <button class="mb-2 mr-6 leading-tight text-gray-700 outline-none text-md">Comentários</button>
+          <%# <span class="mr-6 border-b-4 border-indigo-700"></span> %>
         </div>
       </div>
-      <div class="w-full flex justify-center mt-8">
+      <div class="flex justify-center w-full mt-8">
         <div class="w-1/4">
-          <img class="h-24 w-24 rounded-full mx-auto " src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-          <div class="text-center mt-4 text-md font-semibold leading-tight antialiased text-gray-800">Carlos Miguel</div>
-          <div class="text-center mt-4 text-md font-normal leading-tight antialiased text-gray-800 px-8">Bacharel em Ciência da Computacão pela USP. Trabalhando no Google</div>
+          <img class="w-24 h-24 mx-auto rounded-full " src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+          <div class="mt-4 antialiased font-semibold leading-tight text-center text-gray-800 text-md">Carlos Miguel</div>
+          <div class="px-8 mt-4 antialiased font-normal leading-tight text-center text-gray-800 text-md">Bacharel em Ciência da Computacão pela USP. Trabalhando no Google</div>
         </div>
-
         <%# Description Tab %>
-        <%# <div class="w-3/4 text-md font-normal leading-relaxed antialiased text-gray-600">
+        <%# <div class="w-3/4 antialiased font-normal leading-relaxed text-gray-600 text-md">
           Laborum et nostrud excepteur adipisicing eu nulla id mollit. Qui amet nulla officia officia minim id aliqua sunt. Ullamco laborum aliquip ex nostrud ullamco duis esse id do ex laboris ea non sit. Qui nulla do nisi qui ad est. Enim Lorem exercitation exercitation proident ea eiusmod officia.
           Qui id incididunt irure occaecat sunt sit ipsum. Excepteur ullamco culpa cillum nulla aute consequat amet. Magna sit aliqua laboris nisi velit proident occaecat Lorem. Duis id id enim do dolore. Cillum deserunt eu officia cillum qui eiusmod tempor sit consequat laborum duis anim reprehenderit. Exercitation pariatur voluptate duis esse consectetur consequat do.
 
           Est non amet in do minim aute reprehenderit fugiat est laboris in est mollit. Commodo aliqua anim dolor eu. Et in deserunt incididunt consectetur nostrud aute tempor excepteur aute est exercitation proident Lorem.
         </div> %>
-
         <%# Comments Tab %>
         <div class="flex flex-col items-end w-3/4">
-          <div class="mb-4 w-full">
-            <textarea class="text-sm leading-tight antialiased bg-gray-200 rounded-md w-full h-16 p-2" placeholder="Adicione seu comentário"></textarea>
+          <div class="w-full mb-4">
+            <textarea class="w-full h-16 p-2 text-sm antialiased leading-tight bg-gray-200 rounded-md" placeholder="Adicione seu comentário"></textarea>
           </div>
           <div class="mb-4">
             <%= button_tag type: :submit, class: "flex flex-row text-center bg-indigo-700 text-white p-2 shadow-xl rounded-lg focus:bg-indigo-800 focus:outline-none" do %>
               <div class="flex flex-row mx-auto">
                 <span class="pr-2"><%= image_tag "learn.svg" %></span>
-                <span class="text-sm tracking-wide font-medium">Adicionar Comentário</span>
+                <span class="text-sm font-medium tracking-wide">Adicionar Comentário</span>
               </div>
             <% end %>
           </div>
           <div class="mb-4">
-            <div class="border-b-2 mt-2 mb-2"></div>
-            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-            <div class="flex flex-col ml-2 pt-2">
-              <div class="text-sm leading-tight font-semibold text-gray-700 align-middle">Carlos Miguel</div>
-              <div class="text-sm leading-tight font-medium text-gray-600 mt-6">
+            <div class="mt-2 mb-2 border-b-2"></div>
+            <img class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+            <div class="flex flex-col pt-2 ml-2">
+              <div class="text-sm font-semibold leading-tight text-gray-700 align-middle">Carlos Miguel</div>
+              <div class="mt-6 text-sm font-medium leading-tight text-gray-600">
                 Reprehenderit deserunt velit amet aute commodo. Veniam velit laboris Lorem irure dolore aute anim occaecat exercitation tempor Lorem. Culpa nulla magna dolore aliqua ullamco nisi sunt ex laboris.
                 Mollit minim cupidatat et tempor veniam incididunt minim anim ullamco. Incididunt adipisicing fugiat officia enim aliqua enim eiusmod ex consequat deserunt. Officia ea cupidatat culpa non dolore exercitation reprehenderit eu irure ea proident.
                 Ullamco dolor mollit irure duis dolore labore. Nostrud id proident commodo labore elit quis aute elit ullamco proident adipisicing nostrud. Do incididunt duis ea nulla ad minim in. Sunt amet eu fugiat do consequat quis dolore ullamco voluptate elit consequat consectetur velit. Dolore pariatur ullamco qui culpa sunt laboris exercitation velit enim aute occaecat. Occaecat tempor mollit tempor ut anim aliqua do dolor. Sint eiusmod dolor quis cupidatat ea ipsum dolore voluptate aute exercitation non mollit quis.
                 Qui eu tempor ullamco est culpa et. In nulla amet labore minim consectetur occaecat duis pariatur nisi laboris. Consectetur aute culpa laborum proident ipsum magna sit enim ullamco voluptate. Sint laborum voluptate exercitation mollit est eu sunt do officia mollit.
               </div>
-              <div class="border-b-2 mt-2"></div>
+              <div class="mt-2 border-b-2"></div>
             </div>
           </div>
           <div>
-            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-            <div class="flex flex-col ml-2 pt-2">
-              <div class="text-sm leading-tight font-semibold text-gray-700 align-middle">Carlos Miguel</div>
-              <div class="text-sm leading-tight font-medium text-gray-600 mt-6">
+            <img class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+            <div class="flex flex-col pt-2 ml-2">
+              <div class="text-sm font-semibold leading-tight text-gray-700 align-middle">Carlos Miguel</div>
+              <div class="mt-6 text-sm font-medium leading-tight text-gray-600">
                 Reprehenderit deserunt velit amet aute commodo. Veniam velit laboris Lorem irure dolore aute anim occaecat exercitation tempor Lorem. Culpa nulla magna dolore aliqua ullamco nisi sunt ex laboris.
                 Mollit minim cupidatat et tempor veniam incididunt minim anim ullamco. Incididunt adipisicing fugiat officia enim aliqua enim eiusmod ex consequat deserunt. Officia ea cupidatat culpa non dolore exercitation reprehenderit eu irure ea proident.
               </div>
-              <div class="border-b-2 mt-2 mb-2"></div>
+              <div class="mt-2 mb-2 border-b-2"></div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-  <div class="w-1/7 mt-2 flex flex-col overflow-hidden">
-    <div class="overflow-y-scroll">
-      <% (1...8).each do %>
-      <div>
-        <iframe width="100%" height="100%" class="rounded-lg shadow-md h-48" src='https://www.youtube.com/embed/CHYvj2nE7p8?rel=0&autoplay=0'
+  <div class="flex flex-col mt-2 overflow-hidden w-1/7">
+    <div class="overflow-y-auto">
+      <% (1...16).each do %>
+        <div>
+          <iframe width="100%" height="100%" class="h-48 rounded-lg shadow-md" src='https://www.youtube.com/embed/CHYvj2nE7p8?rel=0&autoplay=0'
           frameborder='0' allowfullscreen>
-        </iframe>
-        <div class="mt-2 mb-4 text-sm text-gray-600">Título do Video</div>
-      </div>
+          </iframe>
+          <div class="mt-2 mb-4 text-sm text-gray-600">Título do Video</div>
+        </div>
       <% end %>
     </div>
   </div>
