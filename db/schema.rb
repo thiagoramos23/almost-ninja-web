@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 2020_05_17_023820) do
 
   create_table "lectures", force: :cascade do |t|
     t.string "video_url"
+    t.string "video_thumbnail_url"
     t.string "title"
     t.string "description"
+    t.integer "lecture_order"
     t.bigint "course_id", null: false
     t.bigint "parent_lecture_id"
     t.index ["course_id"], name: "index_lectures_on_course_id"

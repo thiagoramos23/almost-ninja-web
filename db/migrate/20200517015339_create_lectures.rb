@@ -2,8 +2,10 @@ class CreateLectures < ActiveRecord::Migration[6.0]
   def change
     create_table :lectures do |t|
       t.string :video_url
+      t.string :video_thumbnail_url
       t.string :title
       t.string :description
+      t.integer :lecture_order
       t.references :course, null: false, foreign_key: true
       t.bigint :parent_lecture_id
     end

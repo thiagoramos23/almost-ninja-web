@@ -15,8 +15,8 @@ course_html_description = <<~LARGE_DESCRIPTION
 LARGE_DESCRIPTION
 
 ::ActiveRecord::Base.transaction do
-  user   = ::Identity::User.create!(email: 'thiagoramos.al@example.com')
-  author = ::Identity::User.create!(email: 'carlos@example.com')
+  user   = ::Identity::User.create!(email: 'thiagoramos.al@example.com', name: 'Thiago Ramos')
+  author = ::Identity::User.create!(email: 'carlos@example.com', name: 'Carlos Professor')
   ::Account.create!(email: 'thiagoramos.al@example.com', password: '123123123', password_confirmation: '123123123', user: user)
   course = ::Course::Course.create!(
     name:               'SwiftUI and Combine',
@@ -35,16 +35,20 @@ LARGE_DESCRIPTION
   course.tags.create(name: 'combine')
   course.tags.create(name: 'apple')
 
-  introduction_module = ::Course::Lecture.create!(title: 'Introducão', course: course)
-  ::Course::Lecture.create!(video_url:   'https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0',
-                            description: 'First',
-                            title:       'Intro',
-                            course:      course,
-                            module:      introduction_module)
+  introduction_module = ::Course::Lecture.create!(title: 'Introducão', course: course, lecture_order: 0)
+  ::Course::Lecture.create!(video_url:           'https://www.youtube.com/embed/DBq7E1rF1P0?rel=0&autoplay=0',
+                            video_thumbnail_url: 'https://img.youtube.com/vi/DBq7E1rF1P0/0.jpg',
+                            description:         'First',
+                            title:               'Intro',
+                            lecture_order:       1,
+                            course:              course,
+                            module:              introduction_module)
 
-  ::Course::Lecture.create!(video_url:   'https://www.youtube.com/embed/mPXbFmmt3H0?rel=0&autoplay=0',
-                            description: 'Second Video',
-                            title:       'Books to Read',
-                            course:      course,
-                            module:      introduction_module)
+  ::Course::Lecture.create!(video_url:           'https://www.youtube.com/embed/mPXbFmmt3H0?rel=0&autoplay=0',
+                            video_thumbnail_url: 'https://img.youtube.com/vi/mPXbFmmt3H0/0.jpg',
+                            description:         'Second Video',
+                            title:               'Books to Read',
+                            lecture_order:       2,
+                            course:              course,
+                            module:              introduction_module)
 end
