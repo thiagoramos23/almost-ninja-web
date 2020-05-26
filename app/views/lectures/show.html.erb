@@ -1,0 +1,94 @@
+<div class="flex w-full">
+  <div class="flex flex-col flex-1 w-6/7">
+    <div class="relative mr-4 aspect-ratio-16/9">
+      <iframe height="100%" width="100%" class="absolute" src="<%= @lecture.video_url %>"
+          frameborder='0' allowfullscreen>
+      </iframe>
+    </div>
+    <div class="mr-4">
+      <div class="p-3 text-2xl font-semibold text-gray-700">
+        <%= @lecture.title %>
+      </div>
+      <div class="border-b-2"></div>
+      <div class="flex justify-center w-full mt-8">
+        <div class="flex flex-col">
+          <button class="mb-2 mr-6 leading-tight text-gray-700 outline-none text-md">Descricão</button>
+          <span class="mr-6 border-b-4 border-indigo-700"></span>
+        </div>
+        <div class="flex flex-col">
+          <button class="mb-2 mr-6 leading-tight text-gray-700 outline-none text-md">Comentários</button>
+          <%# <span class="mr-6 border-b-4 border-indigo-700"></span> %>
+        </div>
+      </div>
+      <div class="flex justify-center w-full mt-8">
+        <div class="w-1/4">
+          <img class="w-24 h-24 mx-auto rounded-full " src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+          <div class="mt-4 antialiased font-semibold leading-tight text-center text-gray-800 text-md"><%= @lecture.course.author.name %></div>
+          <div class="px-8 mt-4 antialiased font-normal leading-tight text-center text-gray-800 text-md">Bacharel em Ciência da Computacão pela USP. Trabalhando no Google</div>
+        </div>
+        <%# Description Tab %>
+        <%# <div class="w-3/4 antialiased font-normal leading-relaxed text-gray-600 text-md">
+          Laborum et nostrud excepteur adipisicing eu nulla id mollit. Qui amet nulla officia officia minim id aliqua sunt. Ullamco laborum aliquip ex nostrud ullamco duis esse id do ex laboris ea non sit. Qui nulla do nisi qui ad est. Enim Lorem exercitation exercitation proident ea eiusmod officia.
+          Qui id incididunt irure occaecat sunt sit ipsum. Excepteur ullamco culpa cillum nulla aute consequat amet. Magna sit aliqua laboris nisi velit proident occaecat Lorem. Duis id id enim do dolore. Cillum deserunt eu officia cillum qui eiusmod tempor sit consequat laborum duis anim reprehenderit. Exercitation pariatur voluptate duis esse consectetur consequat do.
+
+          Est non amet in do minim aute reprehenderit fugiat est laboris in est mollit. Commodo aliqua anim dolor eu. Et in deserunt incididunt consectetur nostrud aute tempor excepteur aute est exercitation proident Lorem.
+        </div> %>
+        <%# Comments Tab %>
+        <div class="flex flex-col items-end w-3/4">
+          <div class="w-full mb-4">
+            <textarea class="w-full h-16 p-2 text-sm antialiased leading-tight bg-gray-200 rounded-md" placeholder="Adicione seu comentário"></textarea>
+          </div>
+          <div class="mb-4">
+            <%= button_tag type: :submit, class: "flex flex-row text-center bg-indigo-700 text-white p-2 shadow-xl rounded-lg focus:bg-indigo-800 focus:outline-none" do %>
+              <div class="flex flex-row mx-auto">
+                <span class="pr-2"><%= image_tag "comments.svg" %></span>
+                <span class="text-sm font-medium tracking-wide">Adicionar Comentário</span>
+              </div>
+            <% end %>
+          </div>
+          <div class="mb-4">
+            <div class="mt-2 mb-2 border-b-2"></div>
+            <img class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+            <div class="flex flex-col pt-2 ml-2">
+              <div class="text-sm font-semibold leading-tight text-gray-700 align-middle">Carlos Miguel</div>
+              <div class="mt-6 text-sm font-medium leading-tight text-gray-600">
+                Reprehenderit deserunt velit amet aute commodo. Veniam velit laboris Lorem irure dolore aute anim occaecat exercitation tempor Lorem. Culpa nulla magna dolore aliqua ullamco nisi sunt ex laboris.
+                Mollit minim cupidatat et tempor veniam incididunt minim anim ullamco. Incididunt adipisicing fugiat officia enim aliqua enim eiusmod ex consequat deserunt. Officia ea cupidatat culpa non dolore exercitation reprehenderit eu irure ea proident.
+                Ullamco dolor mollit irure duis dolore labore. Nostrud id proident commodo labore elit quis aute elit ullamco proident adipisicing nostrud. Do incididunt duis ea nulla ad minim in. Sunt amet eu fugiat do consequat quis dolore ullamco voluptate elit consequat consectetur velit. Dolore pariatur ullamco qui culpa sunt laboris exercitation velit enim aute occaecat. Occaecat tempor mollit tempor ut anim aliqua do dolor. Sint eiusmod dolor quis cupidatat ea ipsum dolore voluptate aute exercitation non mollit quis.
+                Qui eu tempor ullamco est culpa et. In nulla amet labore minim consectetur occaecat duis pariatur nisi laboris. Consectetur aute culpa laborum proident ipsum magna sit enim ullamco voluptate. Sint laborum voluptate exercitation mollit est eu sunt do officia mollit.
+              </div>
+              <div class="mt-2 border-b-2"></div>
+            </div>
+          </div>
+          <div>
+            <img class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+            <div class="flex flex-col pt-2 ml-2">
+              <div class="text-sm font-semibold leading-tight text-gray-700 align-middle">Carlos Miguel</div>
+              <div class="mt-6 text-sm font-medium leading-tight text-gray-600">
+                Reprehenderit deserunt velit amet aute commodo. Veniam velit laboris Lorem irure dolore aute anim occaecat exercitation tempor Lorem. Culpa nulla magna dolore aliqua ullamco nisi sunt ex laboris.
+                Mollit minim cupidatat et tempor veniam incididunt minim anim ullamco. Incididunt adipisicing fugiat officia enim aliqua enim eiusmod ex consequat deserunt. Officia ea cupidatat culpa non dolore exercitation reprehenderit eu irure ea proident.
+              </div>
+              <div class="mt-2 mb-2 border-b-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col w-1/4 mt-2 overflow-hidden">
+    <div class="overflow-y-auto">
+      <% @lectures.each do |lecture| %>
+        <%= link_to course_lecture_path(@course, lecture) do %>
+          <div class="flex">
+            <%= image_tag src="#{lecture.video_thumbnail_url}", class: 'h-24 mb-2' %>
+            <div class="flex flex-col">
+              <div class="mx-2 mt-2 text-sm font-semibold leading-tight text-gray-800"><%= lecture.title %> </div>
+              <div class="mx-2 mt-2 text-sm font-normal leading-tight text-gray-700"><%= lecture.description %></div>
+            </div>
+          </div>
+          <div class="mb-2 bg-gray-300 border-b-2"></div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
